@@ -1,0 +1,551 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=Big+Shoulders+Display:wght@200;700&family=Galindo&family=Karla&family=Kumbh+Sans:wght@100;400&family=Lexend+Deca&family=Merriweather&family=Montserrat:wght@100;400&family=Open+Sans:wght@300;400;500&family=Poppins:wght@500&family=Public+Sans:wght@300;500;700&family=Roboto:ital,wght@0,500;1,500&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: hsl(26, 100%, 55%);
+    --side-nav: #FFB72B;
+    --text-color: black;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+    margin-bottom: 50px;
+}
+body.dark nav{
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.menu .logo-toggle{
+    display: none;
+}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    
+}
+
+.cart-box{
+    position: absolute;
+    bottom: -245px;
+    display: none;
+    height: 215px;
+    width: 290px;
+    border: 3px solid orange;
+    /* pointer-events: none; */
+    transition: all 0.3s ease;
+    /* box-shadow: 3.5px 3px 3px 3px yellow; */
+border-radius: 6px;
+}
+
+.threeDiv{
+    position: absolute;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    
+}
+.threeDiv .small-image{
+    align-items: center;
+    display: flex;
+    margin: 2px 5px 2px 5px;
+
+
+}
+.threeDiv .small-image img{
+    border-radius: 5px;
+}
+.small-image p, span{
+font-family: Arial, Helvetica, sans-serif, sans-serif;
+
+}
+
+.btn-checkout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 10rem;
+cursor: pointer;
+}
+ .checkout{
+    padding: 5px 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: hsl(26, 100%, 55%);
+    cursor: pointer;
+    font-size: 1rem;
+margin-bottom: 10px;
+
+}
+.checkout:hover{
+    background-color: #FFB72B;
+}
+.h3-style{
+    position: relative;
+    bottom: 20px;
+}
+.checkout:hover{
+background-color: #FFB72B;
+}
+
+/*Creating cart item added mark */
+.addedCart{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius:50%;
+    color: white;
+}
+.round-number{
+    position: absolute;
+    /* border: 2px solid #FF5F00; */
+    width: 30px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    margin-left: 18px;
+    margin-bottom: 5px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+
+}
+
+
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.icon-cart{
+    width: 35px;
+    background-color: #FFF;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin: 5px;
+    cursor: pointer;
+    height: 35px;
+}
+.avatar{
+    width: 35px;
+    height: 38px;
+}
+
+.cart-icon{
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 50px;
+
+}
+
+.general-div{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    
+margin-top: 10rem;
+margin-left: 7rem;
+}
+
+.big-image img{
+    width: 36rem;
+    height: 30rem;
+    border-radius: 10px;
+}
+.small-images {
+    width: 37rem;
+}
+.product-images{
+    width: 8rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.opacity{
+    opacity: 0.5;
+    
+}
+
+/* Main div */
+
+.heading-center{
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 24rem
+    
+}
+.heading-center h5{
+    color: hsl(26, 100%, 55%);
+    font-size: 1.5em;
+}
+.price  {
+display: flex;
+margin-top: 2em;
+}
+.price h3,h4{
+margin-right: 2em;
+cursor: pointer;
+}
+
+.price h3{
+    font-size: 1.5em;
+}
+.price h4{
+    color:hsl(26, 100%, 55%)
+}
+
+.btn{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.increment-div{
+    display: flex;
+    align-items: center;
+}
+.increment-div .div, .div-2, .div-3{
+    margin-right: 2em;
+    cursor: pointer;
+    
+}
+.cart-button{
+    padding: 10px 40px;
+    border-radius: 10px;
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    color: #FFF;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.cart-button img, button{
+    margin-right: 10px;
+}
+.cart-button img{
+    background-color: #fff;
+    border-radius: 5px;
+    
+}
+ h1, h3, h4, h1, p, span{
+    color: var(--text-color)
+}
+.cart-box p, span {
+    color: black
+}
+.div-2 span{
+    color: var(--text-color);
+}
+.two-line{
+    position: relative;
+    top: 12px;
+    width: 70px;
+    height: 2px;
+    background-color: black;
+}
+
+@media (max-width: 1050px) {
+    
+    .general-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10rem;
+    margin-left: 0rem;
+    
+    }
+    .big-image img{
+        width: auto;
+        height: 20rem;
+        border-radius: 10px;
+        
+    }
+.sneakers-image{
+    text-align: center;
+}
+.small-images {
+    width: auto;
+
+}
+
+
+.heading-center{
+    margin-top: 50px;
+    margin-left: 40px;
+    width: auto;
+   margin-bottom: 50px;
+   
+    
+}
+.cart-box{
+    position: absolute;
+    bottom: -245px;
+    display: none;
+    height: 215px;
+    width: 290px;
+    border: 3px solid orange;
+    /* pointer-events: none; */
+    transition: all 0.3s ease;
+    /* box-shadow: 3.5px 3px 3px 3px yellow; */
+border-radius: 6px;
+right: 50px;
+
+}
+
+
+}
+
+
+
+@media (max-width: 790px){
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+    nav.active .menu{
+        left: -0%;
+    }
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+
+    
+    
+
+
+
+}
+
+@media screen and (max-width: 420px){
+    .cart-button{
+        padding: 10px 20px;
+font-size: 1em;
+        
+    }
+
+    .sidebarOpen{
+        position: relative;
+        right: 10px;
+    }
+    nav .nav-bar .logo a{
+        font-size: 18px;
+        
+    }
+    
+}

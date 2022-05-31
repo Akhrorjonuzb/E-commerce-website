@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">Shopping Cart</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Shopping Cart</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="darkLight-searchBox">
+                <div class="dark-light" >
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+
+                    
+
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+                   
+                   
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+            <div class="cart-icon">
+                <div class="cart-div">
+                    <div class="round-number"></div>
+                    <img  class="icon-cart " id="icon-cart" src="images/icon-cart.svg"  alt="">
+                    <div class="cart-box">
+                        <div class="threeDiv">
+                            <div class="small-image">
+                                <img src="images/image-product-1.jpg" style="width: 50px; height: 50px;" alt="">
+                            </div>
+                            <div class="small-image">
+                                <p>Fall Limited Edition Sneakers
+                                    <!-- <span>$125.00 x <span id="amount">0</span>= <span id="totaValue">
+                                    0</span></span> -->
+                                    <span>$125.00 x </span>  <span id="amount">1</span> =
+                                    <span id="totalValue">$125.00</span>
+                                </p>
+                            </div>
+                            <div class="small-image">
+                                <img src="images/icon-delete.svg" alt="">
+                            </div>
+
+                        </div>
+                        <div class="btn-checkout">
+                            <button class="checkout" >Checkout</button>
+    
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                <img  class="icon-cart borderRadius avatar" src="images/image-avatar.png" alt="">
+                
+            </div>
+            
+        </div>
+        
+        
+        
+    </nav>
+
+    
+<!-- End of Navbar -->
+<div class="general-div">
+    
+
+<div class="sneakers-image">
+    
+
+<div class="big-image">
+    <img src="images/image-product-1.jpg" id="main-img" alt="">
+</div>
+<div class="small-images">
+    <img src="images/image-product-1.jpg" class="product-images " alt="">
+    <img src="images/image-product-2.jpg" class="product-images " alt="">
+    <img src="images/image-product-3.jpg" class="product-images " alt="">
+    <img src="images/image-product-4.jpg" class="product-images " alt="">
+</div> 
+
+</div>
+
+<!-- Heading divs -->
+
+<div class="main-div"  >
+
+    
+
+    <div  class="heading-center" >
+        <h5> Sneaker Company</h5>
+         
+        <h1>
+          Fall Limited Edition Sneakers
+        </h1>
+           
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        
+          <div class="price">
+            <h3 id="price">$125.00</h3>
+            <h4>50%</h4>
+          </div>
+        <div class="two-line"></div>
+        <h4>$250.00</h4>
+          
+        <div class="btn">
+            <div class="increment-div">
+                <div class="div">
+                    <img id="icon-minus" style="width: 15px; height: 10px;" src="images/icon-minus.svg"  alt="">
+                </div>
+                <div class="div-2">
+                    <span id="number" style="width: 10px; height: 10px;" >1</span>
+                </div>
+               <div class="div-3">
+                <img id="icon-plus" style="width: 15px; height: 15px;" src="images/icon-plus.svg" alt="">
+               </div>
+                
+            
+            </div>
+          
+        <div class="cart-div">
+            
+            <button class="cart-button" >
+                <img src="images/icon-cart.svg"  alt="">
+
+                Add to cart
+              </button>
+        </div>
+            
+          
+          
+        </div>
+          
+          
+        
+        
+        
+        </div>
+
+</div>
+
+</div>
+ <!-- <img src="https://www.gstatic.com/youtube/img/promos/growth/b707658a51c9c286e61e1f91ef853ff24e9c8bbb4a22106db9c52f3403400412_2560x520.png" alt=""> -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+     AOS.init();
+   </script>
+     
+    <script src="app.js"></script>
+</body>
+</html>
